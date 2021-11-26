@@ -15,8 +15,11 @@ if (isset($_GET['p'])) {
     if(file_exists("controleur/".$_GET['p'].".controleur.php"))
         $page = $_GET['p'];
     else
-        $page = "home";
+        $page = "404";
+} else {
+    $page = "home";
 }
+
 
 ob_start();
 require "controleur/".$page.".controleur.php";
